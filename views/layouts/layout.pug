@@ -1,0 +1,70 @@
+doctype html
+html(lang='ru')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no')
+		title ZOOM-ZOOM cinema
+		include _head
+		block head
+
+	body
+		.popup-fade
+			.sign-in-popup
+				a.popup-close.a-block(href='#') Закрыть
+				.line
+				form.sign-in(onsubmit='login(this);return false')
+					.sign-in-label Вход
+					input(type='text' placeholder='Введите адрес эл. почты' name='email' required='')
+					input(type='password' placeholder='Введите пароль' name='password' required='')
+					button.sign-in-btn.btn(type='submit') Войти
+				form.register(onsubmit='registration(this); return false')
+					.register-label Регистрация
+					input(type='text' placeholder='Введите адрес эл. почты' name='email' required='')
+					input(type='text' placeholder='Введите имя' name='username' required='')
+					input(type='password' placeholder='Введите пароль' name='password' required='')
+					button.register-btn.btn(type='submit') Зарегистрироваться
+
+	header.header.background-color
+		.header__header-flex
+			.header-flex__logo
+				a.logo__logo-text(href='/')
+					| ZOOM
+					br
+					| ZOOM
+			.header-flex__menu-blocks
+				.menu-blocks__item
+					a.a-block.item-inner(href='/cinemas')
+						div КИНОТЕАТРЫ
+				.menu-blocks__item
+					a.a-block.item-inner(href='/catalog')
+						div ФИЛЬМЫ
+				//
+					<div class="menu-blocks__item">
+					<a href="Schedule.html" class="a-block item-inner"><div>РАСПИСАНИЕ</div></a>
+					</div>
+					<div class="menu-blocks__item">
+					<a href="Soon.html" class="a-block item-inner"><div>СКОРО</div></a>
+					</div>
+				.menu-blocks__item
+					a.a-block.item-inner(href='/my-films')
+						div МОИ ФИЛЬМЫ
+				#sign-in-block.menu-blocks__item
+					a#sign-in-id.popup-open.a-block.item-inner ВОЙТИ
+					a#sign-out-id.a-block.item-inner(onclick='logout(); return false') ВЫЙТИ
+	block content
+	footer
+		.footer-block
+			.footer-links
+				section.links
+					a.person-links(href='https://github.com/leandoerbore')
+						i.fab.fa-github
+					a.person-links(href='https://vk.com/ti1proigral_pridyrok')
+						i.fab.fa-vk
+					a.person-links(href='https://t.me/leandoerbore')
+						i.fab.fa-telegram
+				.timer-block
+					p#timer
+
+	include _scripts
+	block scripts
+	body

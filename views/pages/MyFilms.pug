@@ -1,0 +1,15 @@
+extends ../layouts/layout
+
+block content
+	main
+		.input-form
+			//
+				<form id="input-form" class="my-films-input-form" onsubmit="return search(this)">
+				<input type="search" name="sr" placeholder="Что я хочу посмотреть">
+				<button type="submit"></button>
+				</form>
+		.grid-container
+			.grid-container-inner#films-grid
+
+block scripts
+	script(src='js/renderMyFilms.js')

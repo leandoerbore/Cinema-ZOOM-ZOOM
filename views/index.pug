@@ -1,0 +1,28 @@
+extends layouts/layout
+block content
+	main
+		.add-and-contacts
+			address.add-and-contacts__address
+				a.a-block(href='https://clck.ru/Yhza5')
+					| Арсенальная, 9
+					br
+					| 1-2 этаж
+			.add-and-contacts__add
+				img.add__img(src='img/ad.png')
+			address.add-and-contacts__contact
+				| +7 (812) 542‒26‒95
+				br
+				|                 info@pbstin.ru
+		.block-soon-search.background-color
+			.index-grid
+				.block-soon-search__today
+					.today-span СЕГОДНЯ
+				.block-soon-search__search-block
+					form#form-search.search-block__form(onsubmit='return search(this)')
+						input(type='search' name='sr' placeholder='Поиск фильма')
+						button(type='submit')
+		.grid-container
+			.grid-container-inner#today-grid
+
+block scripts
+	script(src='js/renderTodayGrid.js')

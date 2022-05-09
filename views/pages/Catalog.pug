@@ -1,0 +1,27 @@
+extends ../layouts/layout
+
+block content
+	main
+		.films-block
+			.genres-block.background-color
+				form#form-search.genres-block__genres-type
+					.menu-blocks__item
+						a.a-block.item-inner(href='#' onclick='visualBlock()')
+							span ВСЕ
+					.menu-blocks__item
+						a.a-block.item-inner(href='#' onclick="find(1)")
+							span ФАНТАСТИКА
+					.menu-blocks__item
+						a.a-block.item-inner(href='#' onclick="find(2)")
+							span УЖАСЫ
+					.menu-blocks__item
+						a.a-block.item-inner(href='#' onclick="find(3)")
+							span ДЕТЕКТИВЫ
+					.menu-blocks__item
+						a.a-block.item-inner(href='#' onclick="find(4)")
+							span ПРИКЛЮЧЕНИЯ
+			.grid-container
+				.grid-container-inner#catalog
+
+block scripts
+	script(src='js/renderCatalog.js')

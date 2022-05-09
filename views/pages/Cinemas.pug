@@ -1,0 +1,76 @@
+extends ../layouts/layout
+
+block head
+	script(src='https://maps.api.2gis.ru/2.0/loader.js?pkg=full')
+	script(type='text/javascript').
+		var map;
+		DG.then(function(){map = DG.map('map', { center: [59.893156, 30.280122], zoom: 10 })
+		DG.marker([59.919306, 30.388138]).addTo(map).bindPopup('Невский zoom zoom');
+		DG.marker([59.920172, 30.341946]).addTo(map).bindPopup('Владимировская zoom zoom');
+		DG.marker([59.935061, 30.274052]).addTo(map).bindPopup('Васильеостровский zoom zoom');
+		DG.marker([59.926129, 30.277600]).addTo(map).bindPopup('Мойки zoom zoom');
+		DG.marker([59.883051, 30.415581]).addTo(map).bindPopup('Горденчук zoom zoom');
+		DG.marker([59.996133, 29.757520]).addTo(map).bindPopup('Мнухина zoom zoom');
+		});
+block content
+	main
+		.cinemas-block
+			.cinemas-names-container
+				.cinemas-names-grid
+					ul.cinemas-list
+						li.cinema-item(id='невский')
+							a.cinema-link.a-block(href='https://go.2gis.com/fzg0do')
+								.cinema-block__label
+									| &Ncy;&iecy;&vcy;&scy;&kcy;&icy;&jcy;
+									span.zoom-label ZOOM-ZOOM
+								.cinema-block__address
+									| &Ncy;&acy;&bcy;&iecy;&rcy;&iecy;&zhcy;&ncy;&acy;&yacy; &Ocy;&bcy;&vcy;&ocy;&dcy;&ncy;&ocy;&gcy;&ocy; &kcy;&acy;&ncy;&acy;&lcy;&acy;, 9&icy;,
+									br
+									|  &Scy;&acy;&ncy;&kcy;&tcy;-&Pcy;&iecy;&tcy;&iecy;&rcy;&bcy;&ucy;&rcy;&gcy;, 191167
+						li.cinema-item(id='владимировская')
+							a.cinema-link.a-block(href='https://go.2gis.com/ml83p')
+								.cinema-block__label
+									| &Vcy;&lcy;&acy;&dcy;&icy;&mcy;&icy;&rcy;&ocy;&vcy;&scy;&kcy;&acy;&yacy;
+									span.zoom-label ZOOM-ZOOM
+								.cinema-block__address
+									| &Mcy;&acy;&rcy;&acy;&tcy;&acy;, 78&acy;
+									br
+									| 1 &ecy;&tcy;&acy;&zhcy;
+						li.cinema-item(id='василеостровский')
+							a.cinema-link.a-block(href='https://go.2gis.com/02n92r')
+								.cinema-block__label
+									| &Vcy;&acy;&scy;&icy;&lcy;&iecy;&ocy;&scy;&tcy;&rcy;&ocy;&vcy;&scy;&kcy;&icy;&jcy;
+									span.zoom-label ZOOM-ZOOM
+								.cinema-block__address
+									| 15-&yacy; &lcy;&icy;&ncy;&icy;&yacy; &Vcy;.&Ocy;., 4-6
+									br
+									| 1-4 &ecy;&tcy;&acy;&zhcy;
+						li.cinema-item(id='мойки')
+							a.cinema-link.a-block(href='https://go.2gis.com/v09lw')
+								.cinema-block__label
+									| &Mcy;&ocy;&jcy;&kcy;&icy;
+									span.zoom-label ZOOM-ZOOM
+								.cinema-block__address
+									| &Ncy;&acy;&bcy;&iecy;&rcy;&iecy;&zhcy;&ncy;&acy;&yacy; &rcy;&iecy;&kcy;&icy; &Mcy;&ocy;&jcy;&kcy;&icy;, 126
+									br
+									|  1-4 &ecy;&tcy;&acy;&zhcy;
+						li.cinema-item(id='горденчук')
+							a.cinema-link.a-block(href='https://go.2gis.com/j1sxl')
+								.cinema-block__label
+									| &Gcy;&ocy;&rcy;&dcy;&iecy;&ncy;&chcy;&ucy;&kcy;
+									span.zoom-label ZOOM-ZOOM
+								.cinema-block__address
+									| &TScy;&icy;&mcy;&bcy;&acy;&lcy;&icy;&ncy;&acy;, 58 &lcy;&icy;&tcy; &YUcy;
+									br
+									| 1 &ecy;&tcy;&acy;&zhcy;
+						li.cinema-item(id='мнухина')
+							a.cinema-link.a-block(href='https://go.2gis.com/91yw9i')
+								.cinema-block__label
+									| &Mcy;&ncy;&ucy;&khcy;&icy;&ncy;&acy;
+									span.zoom-label ZOOM-ZOOM
+								.cinema-block__address
+									| &Zcy;&ocy;&scy;&icy;&mcy;&ocy;&vcy;&acy;, 13
+									br
+									| 1 &ecy;&tcy;&acy;&zhcy;
+			#map.map-cinemas
+
